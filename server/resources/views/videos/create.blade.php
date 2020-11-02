@@ -30,7 +30,7 @@
         <input type="text" name="email" value="{{ old('email') }}">
     </p>
     <p>
-        商品画像URL：<br>
+        写真URL：<br>
         <input type="text" name="image_url" value="{{ old('image_url') }}">
     </p>
 
