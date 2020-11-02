@@ -1,0 +1,43 @@
+# Composeのバージョン指定
+version: "3.6"
+
+# サービス定義
+services:
+  # サービス名を指定(複数サービスで同じサービス名も使える)
+  app:
+    # Dockerfileの場所を指定
+    build: ./docker/app
+    # イメージ名を指定(イメージ名:タグ) buildと併用するとimageが見つからない場合にbuildを実行する
+    image: camp/app:1
+    # 開放するポートを指定(ホスト:コンテナ)
+    ports:
+      - 8000:8000
+    # マウントするボリュームを指定(ホスト:コンテナ)フォルダ単位でもファイル単位でも指定できる
+    volumes:
+      - ./server:/var/www:cached
+    # ログイン時のディレクトリを指定(無いディレクトリは指定できない)
+    working_dir: /var/www
+
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./server:/var/www:cached
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+
+  db:
+    # Dockerfileの相対Path
+    build: docker/db/
+    image: camp/db:1
+    # build後も使用出来る環境変数として.envの環境変数を指定
+    env_file: .env
+    # マウントするボリュームを指定(ホスト:コンテナ) ここにDBデータが保存される
+    volumes:
+      - "./mysql-data:/var/lib/mysql"
+    ports:
+      - 3306:3306
+    # docker-toolboxは非同期ディスク I/Oが使用出来ないためこの設定が必要
+    # command: --innodb-use-native-aio=0
