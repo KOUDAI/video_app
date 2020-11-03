@@ -11,12 +11,26 @@ use App\Http\Requests\VideoRequest;
 class VideoController extends Controller
 {
     // indexページへ移動
-    public function index()
+    public function index(Request $request)
     {
         // モデル名::テーブル全件取得
         $videos = Video::all();
         // Videoティレクトリーの中のindexページを指定し、Videoの連想配列を代入
         return view('videos.index', ['videos' => $videos]);
+
+        $name = $request->name;
+        $category = $request->category;
+
+        $query = Video::query();
+        if($name) {
+            $query->where('name', 'like', '%' . $name . '%');
+        }
+        if($category) {
+            $query->where('category', 'like', '%' . $category . '%');
+        }
+        $videos = $query->paginate(10);
+        $videos->appends(compact('name', 'category'));
+        return view('videos.index', compact('videos'));
     }
 
 

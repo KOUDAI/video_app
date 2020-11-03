@@ -19,10 +19,11 @@
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li> --}}
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        {{-- <form class="form-inline my-2 my-lg-0"> --}}
+            <form class="form-inline my-2 my-lg-0" mechod="GET" action="{{ route('videos.index') }}">
             {{-- <input class="form-control mr-sm-2" type="search" placeholder="Search"> --}}
-                <input class="form-control mr-sm-2" type="search" placeholder="カテゴリー">
-                <input class="form-control mr-sm-2" type="search" placeholder="コーチの名前">
+            <input class="form-control mr-sm-2" type="search" name="category" placeholder="カテゴリ">
+            <input class="form-control mr-sm-2" type="search" name="name" placeholder="コーチの名前">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
