@@ -1,4 +1,21 @@
 {{-- <!DOCTYPE html>
+    <html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>プロフィール画面</title>
+        <script src="{{ asset('js/app.js') }}"></script>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container"> --}}
+    
+
+            {{-- @include('layouts.video', compact('video')) --}}
+    
+
+{{-- <!DOCTYPE html>
   <html lang="ja">
   <head>
       <meta charset="UTF-8">
@@ -14,7 +31,7 @@
  @section('title', 'プロフィール')
  @section('content')
           {{-- @include('layouts.video', compact('video')) --}}
-    <div class="profile">
+    <div class="profile block">
             <div class="image">
                 <img src="{{ url($video->image_url) }}" class="square-img">
             </div>
@@ -35,6 +52,14 @@
                     </p>
                 </div>
     </div>
+
+<div clsss='block'>
+    {!!$cal_tag!!}
+    <a href="{{ url('/holiday') }}">休日設定</a>
+</div>
+
+
+    
     {{-- <!-- 商品のidを元に編集ページへ遷移する -->
     <a href="/videos/{{ $video->id }}/edit"><button>編集する</button></a>
     <form action="/videos/{{ $video->id }}" method="post">
@@ -42,7 +67,7 @@
         @method('DELETE')
         <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
     </form> --}}
-    @endsection
+@endsection
 {{-- </div>
-  </body>
+    </body>
     </html> --}}

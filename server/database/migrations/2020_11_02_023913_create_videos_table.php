@@ -20,7 +20,7 @@ class CreateVideosTable extends Migration
             $table->integer('price');
             $table->string('email');
             $table->text('image_url');
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

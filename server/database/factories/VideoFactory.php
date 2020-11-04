@@ -19,9 +19,9 @@ $factory->define(video::class, function (Faker $faker) {
         'price' => $price[array_rand($price)],
         'category' => $category[array_rand($category)],
         // 'email' => $email
-        // 'note' => 'オンライン講座 ' . rand('可', '不可') . '現金でのお支払いは出来ません。',
-        // 'pr_short' => 'あなたの秘めた才能を一緒に開花させましょう！',
-        // 'pr_long' => '初心者の方でも安心のレッスン内容！ご要望やレベルにあわせたレッスンを進めながら、講師が丁寧にアドバイス♪',
-        // 'img_path' => 'storage/video_image/' . rand(1, 17) . '.jpg',
+        'note' => 'オンライン講座 ' . rand('可', '不可') . '現金でのお支払いは出来ません。',
+        'pr_short' => 'あなたの秘めた才能を一緒に開花させましょう！',
+        'pr_long' => '初心者の方でも安心のレッスン内容！ご要望やレベルにあわせたレッスンを進めながら、講師が丁寧にアドバイス♪',
+        'img_path' => 'storage/video_image/' . rand(1, 17) . '.jpg',
     ];
 });

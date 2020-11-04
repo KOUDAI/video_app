@@ -18,9 +18,14 @@ Route::get('/', function () {
 });
 
 Route::resource('videos', 'VideoController');
+Route::resource('calendars', 'CalendarController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/holiday', 'CalendarController@getHoliday');
-Route::post('/holiday', 'CalendarController@postHoliday');
+Route::get('/videos/holiday', 'CalendarController@getHoliday');
+Route::post('/videos/holiday', 'CalendarController@postHoliday');
+// Route::get('/videos/{id}', 'CalendarController@index');
+Route::get('/videos/holiday/{id}', 'CalendarController@getHolidayId');
+Route::delete('/videos/holiday', 'CalendarController@deleteHoliday');

@@ -41,7 +41,10 @@
         "classmap": [
             "database/seeds",
             "database/factories"
-        ]
+        ],
+            "files": [
+        "app/Calendar.php"
+    ]
     },
     "autoload-dev": {
         "psr-4": {
