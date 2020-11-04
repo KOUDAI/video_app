@@ -25,6 +25,7 @@
     @endforeach
 </ul>
 <a href="/videos/create"><button>新規登録</button></a>
+
 {{-- </body>
 </div>
 </html> --}}

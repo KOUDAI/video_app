@@ -1,5 +1,121 @@
 .square-img{
-    height: 240px;
-    width: 240px;
-    object-fit: cover;
+      height: 360px;
+      width: 360px;
+      object-fit: cover;
+  }
+ .logo {
+     font-family: 'Noto Serif JP', serif;
+ }
+.profile{
+    display:flex;
+    font-size: 40px;
+    margin-top:120px;
+}
+.info{
+    margin-left:120px;
+}
+.box {
+    overflow: hidden;
+    width: 90%;
+    margin: 2em auto;
+    padding:8px 0px ; 
+    text-align: center;
+    display: table-cell;
+    vertical-align:top;
+}
+.box select {
+    width: 100%;
+    padding-right: 1em;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.box select::-ms-expand {
+    display: none;
+}
+.box.cp_sl02 {
+    position: relative;
+    border: 1px solid #BBBBBB;
+    border-radius: 2px;
+    background: #FFFFFF;
+}
+.box.cp_sl02::before {
+    position: absolute;
+    top: 0.8em;
+    right: 0.9em;
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #666666;
+    pointer-events: none;
+}
+.box.cp_sl02:after {
+    position: absolute;
+    top: 0;
+    right: 2.5em;
+    bottom: 0;
+    width: 1px;
+    content: '';
+    border-left: 1px solid #BBBBBB;
+}
+.box.cp_sl02 select {
+    padding: 8px 38px 8px 8px;
+    color: #666666;
+}
+.top.cate{
+    overflow: hidden;
+    width: 90%;
+    /* margin: 2em auto; */
+    text-align: center;
+    padding: 20px 0px 0px 200px;
+}
+.top.cate.select {
+    width: 100%;
+    padding-right: 1em;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.top.cate.select::-ms-expand {
+    display: none;
+}
+.top.cate.cp_sl01 {
+    position: relative;
+    border: 1px solid #BBBBBB;
+    border-radius: 2px;
+    background: #FFFFFF;
+}
+.top.cate.cp_sl01::before {
+    position: absolute;
+    top: 0.8em;
+    right: 0.9em;
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #666666;
+    pointer-events: none;
+}
+.top.cate.cp_sl01 select {
+    padding: 8px 38px 8px 8px;
+    color: #666666;
 }

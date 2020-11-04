@@ -95,4 +95,10 @@ class VideoController extends Controller
         $video = Video::find($id);
         return view('videos.show', ['video' => $video]);
     }
+    public function Top($id)
+    {
+        $video = Video::find($id);
+        return view('videos.top', ['video' => $video]);
+    }
+
 }

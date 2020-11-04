@@ -1,6 +1,6 @@
 <div class="row">
     <div>
-        <img src="{{ url($video->img_path) }}" class="square-img">
+        <img src="{{ url($video->image_url) }}" class="square-img">
     </div>
     <div class="ml-3">
         <div class="mt-3 mb-3">
