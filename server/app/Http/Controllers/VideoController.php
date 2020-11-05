@@ -62,6 +62,8 @@ class VideoController extends Controller
     public function edit($id)
     {
         $video = Video::find($id);
+
+        
         return view('videos.edit', ['video' => $video]);
     }
     public function update(VideoRequest $request, $id)
@@ -112,8 +114,8 @@ class VideoController extends Controller
         // 休日データ取得
         $data = new Holiday();
         $list = Holiday::all();
-        // return view('calendar.holiday', ['list' => $list, 'data' => $data]);
-        return view('videos.show', ['list' => $list, 'data' => $data]);
+        return view('calendar.holiday', ['list' => $list, 'data' => $data]);
+        // return view('videos.show', ['list' => $list, 'data' => $data]);
     }
 
     public function getHolidayId($id)
@@ -124,8 +126,8 @@ class VideoController extends Controller
             $data = Holiday::where('id', '=', $id)->first();
         }
         $list = Holiday::all();
-        // return view('calendar.holiday', ['list' => $list, 'data' => $data]);
-        return view('videos.show', ['list' => $list, 'data' => $data]);
+        return view('calendar.holiday', ['list' => $list, 'data' => $data]);
+        // return view('videos.show', ['list' => $list, 'data' => $data]);
     }
 
     public function postHoliday(Request $request)
@@ -150,8 +152,8 @@ class VideoController extends Controller
         // 休日データ取得
         $data = new Holiday();
         $list = Holiday::all();
-        // return view('calendar.holiday', ['list' => $list, 'data' => $data]);
-        return view('videos.show', ['list' => $list, 'data' => $data]);
+        return view('calendar.holiday', ['list' => $list, 'data' => $data]);
+        // return view('videos.show', ['list' => $list, 'data' => $data]);
     }
 
     public function caledarIndex(Request $request)
@@ -174,8 +176,8 @@ class VideoController extends Controller
         // 休日データ取得
         $data = new Holiday();
         $list = Holiday::all();
-        // return view('calendar.holiday', ['list' => $list, 'data' => $data]);
-        return view('videos.show', ['list' => $list, 'data' => $data]);
+        return view('calendar.holiday', ['list' => $list, 'data' => $data]);
+        // return view('videos.show', ['list' => $list, 'data' => $data]);
     }
 
 }

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('videos/top');
 });
 
 Route::resource('videos', 'VideoController');
@@ -23,9 +23,10 @@ Route::resource('calendars', 'CalendarController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/test/menu', 'Test\MenuController@menu');
 
 Route::get('/videos/holiday', 'CalendarController@getHoliday');
 Route::post('/videos/holiday', 'CalendarController@postHoliday');
 // Route::get('/videos/{id}', 'CalendarController@index');
-Route::get('/videos/holiday/{id}', 'CalendarController@getHolidayId');
+Route::get('/videos/holiday', 'CalendarController@getHolidayId');
 Route::delete('/videos/holiday', 'CalendarController@deleteHoliday');

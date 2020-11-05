@@ -7,8 +7,8 @@
      font-family: 'Noto Serif JP', serif;
  }
 .profile{
-    display:flex;
-    font-size: 40px;
+    display:inline-block; 
+    font-size: 20px;
     margin-top:120px;
 }
 .info{
@@ -122,5 +122,5 @@
 
 /* カレンダー */
 .block {
-    display: block;
+    display: block; 
 }

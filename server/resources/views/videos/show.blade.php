@@ -16,21 +16,21 @@
     
 
 {{-- <!DOCTYPE html>
-  <html lang="ja">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>プロフィール画面</title>
-     <script src="{{ asset('js/app.js') }}"></script>
-     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  </head>
-  <body>
-      <div class="container"> --}}
-@extends('layouts.app')
- @section('title', 'プロフィール')
- @section('content')
-          {{-- @include('layouts.video', compact('video')) --}}
+    <html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>プロフィール画面</title>
+        <script src="{{ asset('js/app.js') }}"></script>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container"> --}}
+    @extends('layouts.app')
+    @section('title', 'プロフィール')
+    @section('content')
+            {{-- @include('layouts.video', compact('video')) --}}
     <div class="profile block">
             <div class="image">
                 <img src="{{ url($video->image_url) }}" class="square-img">
@@ -55,7 +55,9 @@
 
 <div clsss='block'>
     {!!$cal_tag!!}
-    <a href="{{ url('/holiday') }}">休日設定</a>
+    @auth
+    <a href="{{ url('/videos/holiday/') }}">スケジュール登録(ホスト用)</a>
+    @endauth
 </div>
 
 

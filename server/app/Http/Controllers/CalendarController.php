@@ -54,7 +54,7 @@ class CalendarController extends Controller
         // return view('calendar.holiday', ['list' => $list, 'data' => $data]);
         return view('videos.show', ['list' => $list, 'data' => $data]);
 
-        
+    
     }
 
     public function index(Request $request)

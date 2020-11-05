@@ -24,7 +24,9 @@
         @include('layouts.video', compact('video'))
     @endforeach
 </ul>
+@auth
 <a href="/videos/create"><button>新規登録</button></a>
+@endauth
 
 {{-- </body>
 </div>

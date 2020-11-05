@@ -8,7 +8,6 @@ class Calendar extends Model
 {
 
     
-
     private $holidays;
     function __construct($holidays)
     {

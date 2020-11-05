@@ -2,5 +2,5 @@
 @section('title', 'カレンダー')
 @section('content')
     {!!$cal_tag!!}
-    <a href="{{ url('/holiday') }}">休日設定</a>
+    <a href="{{ url('/holiday') }}">スケジュール管理(ホスト用)</a>
 @endsection
