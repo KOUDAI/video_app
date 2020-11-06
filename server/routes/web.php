@@ -18,6 +18,11 @@ Route::get('/', function () {
 });
 
 Route::resource('videos', 'VideoController');
+Route::get('/videos/{id}/editH', 'VideoController@getHoliday');
+Route::post('/videos/{id}/editH', 'VideoController@postHoliday');
+
+Route::get('/videos/{id}/editH', 'VideoController@editH');
+
 Route::resource('calendars', 'CalendarController');
 
 Auth::routes();
@@ -25,8 +30,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/test/menu', 'Test\MenuController@menu');
 
-Route::get('/videos/holiday', 'CalendarController@getHoliday');
-Route::post('/videos/holiday', 'CalendarController@postHoliday');
-// Route::get('/videos/{id}', 'CalendarController@index');
-Route::get('/videos/holiday', 'CalendarController@getHolidayId');
-Route::delete('/videos/holiday', 'CalendarController@deleteHoliday');
+// Route::get('/videos/holiday', 'CalendarController@getHoliday');
+// Route::post('/videos/holiday', 'CalendarController@postHoliday');
+// // Route::get('/videos/{id}', 'CalendarController@index');
+// Route::get('/videos/holiday', 'CalendarController@getHolidayId');
+// Route::delete('/videos/holiday', 'CalendarController@deleteHoliday');

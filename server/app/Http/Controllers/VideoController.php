@@ -62,10 +62,18 @@ class VideoController extends Controller
     public function edit($id)
     {
         $video = Video::find($id);
-
-        
-        return view('videos.edit', ['video' => $video]);
+        return view('videos.edit', ['video' => $video ]);
     }
+
+    public function editH($id)
+    {
+        $data = Holiday::find($id);
+    
+        $list = Holiday::all();
+        return view('videos.editH', ['list' => $list, 'data' => $data]);
+
+    }
+
     public function update(VideoRequest $request, $id)
     {
         // ここはidで探して持ってくる以外はstoreと同じ
@@ -97,11 +105,12 @@ class VideoController extends Controller
     {
         $video = Video::find($id);
 
-        $list = Holiday::all();
+        $list = Holiday::where('user_id', $id);
         $cal = new Calendar($list);
         $tag = $cal->showCalendarTag($request->month, $request->year);
 
         return view('videos.show', ['video' => $video, 'cal_tag' => $tag]);
+        
     }
     public function Top($id)
     {
@@ -109,12 +118,12 @@ class VideoController extends Controller
         return view('videos.top', ['video' => $video]);
     }
 
-    public function getHoliday(Request $request)
+    public function getHoliday($id)
     {
         // 休日データ取得
         $data = new Holiday();
         $list = Holiday::all();
-        return view('calendar.holiday', ['list' => $list, 'data' => $data]);
+        return view('videos.editH', ['list' => $list, 'data' => $data, 'id' => $id]);
         // return view('videos.show', ['list' => $list, 'data' => $data]);
     }
 
@@ -130,7 +139,7 @@ class VideoController extends Controller
         // return view('videos.show', ['list' => $list, 'data' => $data]);
     }
 
-    public function postHoliday(Request $request)
+    public function postHoliday(Request $request, $id)
     {
         $validatedData = $request->validate([
             'day' => 'required|date_format:Y-m-d',
@@ -147,6 +156,7 @@ class VideoController extends Controller
             $holiday = new Holiday();
             $holiday->day = $request->day;
             $holiday->description = $request->description;
+            $holiday->user_id = $request->user_id;
             $holiday->save();
         }
         // 休日データ取得

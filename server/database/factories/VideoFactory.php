@@ -17,7 +17,8 @@ $factory->define(video::class, function (Faker $faker) {
         // 'name_kana' => $name,
         // 'address' => $faker->address,
         'price' => $price[array_rand($price)],
-        'category' => $category[array_rand($category)],
+        // 'category' => $category[array_rand($category)],
+        'category_id' => Arr::random(Arr::pluck(App\Category::all(), 'id')),
         // 'email' => $email
         'note' => 'オンライン講座 ' . rand('可', '不可') . '現金でのお支払いは出来ません。',
         'pr_short' => 'あなたの秘めた才能を一緒に開花させましょう！',
