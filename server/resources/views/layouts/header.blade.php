@@ -29,9 +29,9 @@
 
             <form class="form-inline my-2 my-lg-0" mechod="GET" action="{{ route('videos.index') }}">
 
-            <input class="form-control mr-sm-2" type="search" name="category" placeholder="カテゴリ">
+            {{-- <input class="form-control mr-sm-2" type="search" name="category" placeholder="カテゴリ">
             <input class="form-control mr-sm-2" type="search" name="name" placeholder="コーチの名前">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> --}}
         </form>
                     <form id="logout-button" method="POST" action="{{ route('logout')}}">
                 @csrf

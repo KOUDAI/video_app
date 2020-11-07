@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('videos/top');
+    return view('index');
 });
 
 Route::resource('videos', 'VideoController');
