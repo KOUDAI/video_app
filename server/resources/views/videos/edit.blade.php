@@ -24,7 +24,7 @@
     </p>
     <p>
         アピール：<br>
-        <input type="text" name="description" value="{{ $video->description }}">
+        <textarea class="form-control" name='content' placeholder="内容" rows="3">{{ old('content') }}</textarea>
     </p>
     <p>
         1時間あたり：<br>

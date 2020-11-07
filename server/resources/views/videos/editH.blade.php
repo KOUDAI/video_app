@@ -41,8 +41,9 @@
             <td>{{$val->description}}</td>
             <td>{{$val->created_at}}</td>
             <td>{{$val->updated_at}}</td>
-                    <td><form action="/holiday" method="post">
+                    <td><form action="/videos/holiday" method="post">
             <input type="hidden" name="id" value="{{$val->id}}">
+            <input type="hidden" name="video_id" value="{{$id}}">
             {{ method_field('delete') }}
             {{csrf_field()}} 
             <button class="btn btn-default" type="submit">Delete</button>
@@ -58,7 +59,7 @@
             </script>
             {{-- // <input type="text" id="day"> --}}
         </tbody>
-        <a href="{{ url('/') }}"><button type="submit" class="btn btn-primary">カレンダーに戻る</button></a>
+        <a href="/videos/{{ $id }}"><button type="submit" class="btn btn-primary">カレンダーに戻る</button></a>
 </table>
 
 @endsection

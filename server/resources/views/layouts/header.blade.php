@@ -35,7 +35,9 @@
         </form>
                     <form id="logout-button" method="POST" action="{{ route('logout')}}">
                 @csrf
+                @auth
                 <button>logout</button>
+                @endauth
                 </form>
     </div>
 </nav>

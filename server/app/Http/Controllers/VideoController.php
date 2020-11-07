@@ -69,7 +69,7 @@ class VideoController extends Controller
     {
         $data = Holiday::find($id);
     
-        $list = Holiday::all();
+        $list = Holiday::where('user_id', $id)->get()->sortBy('day');
         return view('videos.editH', ['list' => $list, 'data' => $data, 'id' => $id]);
 
     }
@@ -105,7 +105,7 @@ class VideoController extends Controller
     {
         $video = Video::find($id);
 
-        $list = Holiday::where('user_id', $id);
+        $list = Holiday::where('user_id', $id)->get();
         $cal = new Calendar($list);
         $tag = $cal->showCalendarTag($request->month, $request->year);
 
@@ -160,9 +160,10 @@ class VideoController extends Controller
             $holiday->save();
         }
         // 休日データ取得
-        $data = new Holiday();
-        $list = Holiday::all();
-        return view('calendar.holiday', ['list' => $list, 'data' => $data]);
+        // $data = new Holiday();
+        // $list = Holiday::all();
+        return redirect('/videos/' . $id . '/editH');
+        // return view('calendar.holiday', ['list' => $list, 'data' => $data]);
         // return view('videos.show', ['list' => $list, 'data' => $data]);
     }
 

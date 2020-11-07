@@ -78,6 +78,6 @@ class CalendarController extends Controller
         $data = new Holiday();
         $list = Holiday::all();
         // return view('calendar.holiday', ['list' => $list, 'data' => $data]);
-        return view('videos.show', ['list' => $list, 'data' => $data]);
+        return redirect('/videos/' . $request->video_id . '/editH');
     }
 }

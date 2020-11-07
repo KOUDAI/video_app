@@ -59,7 +59,10 @@
                 {!!$cal_tag!!}
                 {{-- @auth --}}
                 <p>対応可能日時より､ご希望の予約日をお選びください｡</p>
+                {{ $video->id }}
+                {{ Auth::id() }}<br>
                 <a href='/videos/{{ $video->id }}/editH'>スケジュール登録(ホスト用)</a>
+                
                 <a href="/videos/{{ $video->id }}/edit">編集する</a>
     {{-- @endauth --}}
 </div>
