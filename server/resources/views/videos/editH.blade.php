@@ -12,7 +12,7 @@
 @endif
 <h1>スケジュール登録</h1>
 <!-- 休日入力フォーム -->
-    <form method="POST" action="/videos/{{ $id ?? '' }}/editH"> 
+    <form method="POST" action="/videos/{{ $id }}/editH"> 
     <div class="form-group">
     {{csrf_field()}}    
     <label for="day">日付[YYYY/MM/DD] </label>
@@ -22,7 +22,7 @@
     </div>
     <button type="submit" class="btn btn-primary">登録</button> 
     <input type="hidden" name="id">
-    <input type="hidden" name="user_id" value="{{ $id ?? '' }}">
+    <input type="hidden" name="user_id" value="{{ $id }}">
     </form> 
 <!-- 休日一覧表示 -->
 <table class="table">

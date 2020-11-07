@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
-    public function holiday()
+    public function holidays()
     {
-        return $this->belongsTo('App\Holiday');
+        return $this->hasMany('App\Holiday');
     }
 }

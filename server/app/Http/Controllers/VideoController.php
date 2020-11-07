@@ -70,7 +70,7 @@ class VideoController extends Controller
         $data = Holiday::find($id);
     
         $list = Holiday::all();
-        return view('videos.editH', ['list' => $list, 'data' => $data]);
+        return view('videos.editH', ['list' => $list, 'data' => $data, 'id' => $id]);
 
     }
 
