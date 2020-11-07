@@ -49,6 +49,7 @@
                     </p>
                     <p>
                         <b>メール：{{ $video->email }}</b>
+                        {{-- {{HTML::mailto('$video->email')}} --}}
                     </p>
                     
                 </div>
@@ -59,11 +60,20 @@
                 {!!$cal_tag!!}
                 {{-- @auth --}}
                 <p>対応可能日時より､ご希望の予約日をお選びください｡</p>
-                {{ $video->id }}
-                {{ Auth::id() }}<br>
-                <a href='/videos/{{ $video->id }}/editH'>スケジュール登録(ホスト用)</a>
+                {{-- {{ $video->id }}
+                {{ Auth::id() }}<br> --}}
+
+                @if (Auth::id() == $video->id)
+                        <a href='/videos/{{ $video->id }}/editH'>スケジュール登録(ホスト用)</a>
+                        <a href="/videos/{{ $video->id }}/edit">編集する</a>
+                    @else
+                       {{-- <a href="{{ route('register') }}">いらん</a> --}}
+                        @endif
+                </div>
+              
+            
+                {{-- <a href='/videos/{{ $video->id }}/editH'>スケジュール登録(ホスト用)</a> --}}
                 
-                <a href="/videos/{{ $video->id }}/edit">編集する</a>
     {{-- @endauth --}}
 </div>
 

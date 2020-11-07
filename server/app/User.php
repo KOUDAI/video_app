@@ -37,9 +37,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function video()
+    public function videos()
     {
-        return $this->hasOne('App\Video');
+        return $this->hasMany('App\Video');
     }
 
 

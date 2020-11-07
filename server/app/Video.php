@@ -11,4 +11,9 @@ class Video extends Model
     {
         return $this->hasMany('App\Holiday');
     }
+
+    public function users()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
