@@ -14,6 +14,7 @@ class VideoTableSeeder extends Seeder
     {
 //       一件だけinsertする
         DB::table('videos')->insert([
+            'user_id' => 1,
             'name' => 'オソリオ タイチ',
             'description' => 'メディア出演も多数のベテラン歌手｡ペルー民謡からj-popまで幅広く対応可能｡',
             'price' => 5000,
@@ -24,6 +25,7 @@ class VideoTableSeeder extends Seeder
 
         # paramに配列を代入
         $param = [[
+            'user_id' => 1,
             'name' => '穂山 敬太郎',
             'description' => 'ホーやんの相性で女性人気沸騰中の穂山の個別指導。楽曲制作でも有数の実績を持つ！',
             'price' => 8000,
@@ -33,6 +35,7 @@ class VideoTableSeeder extends Seeder
                 // 'category' => '上級者向け',
         ],
         [
+            'user_id' => 1,
             'name' => 'AKIRA',
             'description' => 'ボーカル歴は小学生時代から｡数々の地方カラオケ大会で準優勝の豪腕トレーナー！',
             'price' => 1000,
@@ -41,6 +44,7 @@ class VideoTableSeeder extends Seeder
             'image_url' => 'https://cdn.pixabay.com/photo/2016/06/21/08/40/prairie-dog-1470659_1280.jpg'
         ],
         [
+            'user_id' => 1,
             'name' => '金野 利哉',
             'description' => '独自のメソッドで数々の大物歌手を排出｡公私ともに順調トレーナー！',
             'price' => 6000,
@@ -49,6 +53,7 @@ class VideoTableSeeder extends Seeder
             'image_url' => 'https://cdn.pixabay.com/photo/2017/08/01/14/51/concert-2566002_1280.jpg'
         ],
         [
+            'user_id' => 1,
             'name' => '立川 達也',
             'description' => '2歳からTV出演｡今は八幡平市でのんびり暮らすあの大物トレーナーが音楽業界に帰ってきた！',
             'price' => 9000,

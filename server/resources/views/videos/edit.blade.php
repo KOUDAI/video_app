@@ -24,7 +24,7 @@
     </p>
     <p>
         アピール：<br>
-        <textarea class="form-control" name='content' placeholder="内容" rows="3">{{ old('content') }}</textarea>
+        <textarea class="form-control" name='description' placeholder="内容" rows="3">{{ old('description') }}</textarea>
     </p>
     <p>
         1時間あたり：<br>

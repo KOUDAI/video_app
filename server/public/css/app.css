@@ -10903,3 +10903,37 @@ a.text-dark:focus {
   }
 }
 
+
+square-img{
+      height: 360px;
+      width: 360px;
+      object-fit: cover;
+      text-align: center;
+      margin:50px;
+  }
+ .logo {
+     font-family: 'Oswald', sans-serif;
+     font-size: 30px;
+ }
+.profile{
+    /* display:flex; */
+    display:inline-block;
+    font-size: 25px;
+  /* margin-top:120px; */
+  padding-block: 10px 120px 0 20px ;
+}
+.image{
+    display:inline;
+    border-radius: 10px;
+}
+.square-img{
+  display:inline;
+  border-radius: 10px;
+}
+.info{
+    display:inline;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    margin:50px;
+}

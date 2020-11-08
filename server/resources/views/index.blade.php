@@ -30,12 +30,11 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Category</a></li>
                         @if (Route::has('login'))
                         @auth
-                <form id="logout-button" method="POST" action="{{ route('logout')}}">
-                @csrf
-                @auth
-                <div ></div> logout 
-                @endauth
-                </form>
+                            <form id="logout-button" method="POST" action="{{ route('logout')}}" name="form1">
+                                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:form1.submit()">Logout</a></li>
+                                @csrf
+                                {{-- <a href="javascript:form1.submit()">Logout</a> --}}
+                            </form>
                         @else
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ route('login') }}">Login</a></li>
                         @if (Route::has('register'))

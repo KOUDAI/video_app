@@ -25,7 +25,8 @@
     @endforeach
 </ul>
 @auth
-<a href="/videos/create"><button>新規登録</button></a>
+<a class="btn btn-primary" href="/videos/create" role="button">アカウント登録(コーチ用)</a>
+{{-- <a href="/videos/create"><button>新規登録</button></a> --}}
 @endauth
 
 {{-- </body>
