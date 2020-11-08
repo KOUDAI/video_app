@@ -4,7 +4,6 @@
 @section('title', 'プロフィール')
 {{-- @include('layouts.video', compact('video')) --}}
 
-<body>
 <div class="show">
     <div class="profile">
         <div class="row block">
@@ -12,18 +11,18 @@
             <div class="image col-3">
                 <img src="{{ url($video->image_url) }}" class="square-img">
             </div>
-                <div class="info col-7">
-                    <p>
-                        名前<br>{{ $video->name }}</b>
-                    </p>
-                    
-                    <p>
-                        アピール<br>{{ $video->description }}</b>
-                    </p>
-                    
-                    <p>
-                        一時間あたり:{{ $video->price }}円</b>
-                    </p>
+            <div class="info col-7">
+                <p>
+                    名前<br>{{ $video->name }}</b>
+                </p>
+                
+                <p>
+                    アピール<br>{{ $video->description }}</b>
+                </p>
+                
+                <p>
+                    一時間あたり:{{ $video->price }}円</b>
+                </p>
             </div>
         </div>
     </div>
@@ -153,6 +152,4 @@
 </div><!-- /page -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
 @endsection
