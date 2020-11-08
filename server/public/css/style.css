@@ -3,9 +3,7 @@
       width: 360px;
       object-fit: cover;
   }
- .logo {
-     font-family: 'Noto Serif JP', serif;
- }
+
 .profile{
     display:inline-block; 
     font-size: 20px;
@@ -157,4 +155,7 @@ square-img{
     font-weight: 500;
     font-style: italic;
     margin:50px;
+}
+body{
+    background-color:aliceblue;
 }

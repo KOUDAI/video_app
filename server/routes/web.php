@@ -29,6 +29,13 @@ Route::resource('calendars', 'CalendarController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::post('/sendmail', function () {
+    return view('videos.sendmail');
+})->name('sendmail');
+
+
 // Route::get('/test/menu', 'Test\MenuController@menu');
 
 // Route::get('/videos/holiday', 'CalendarController@getHoliday');
